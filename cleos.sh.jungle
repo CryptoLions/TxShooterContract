@@ -1,0 +1,13 @@
+#!/bin/bash
+################################################################################
+#
+# Script Created by http://CryptoLions.io
+# For EOS Junlge testnet
+#
+# https://github.com/CryptoLions/
+#
+################################################################################
+
+CLEOS=/opt/bin/bin/cleos
+$CLEOS -u http://jungle2.cryptolions.io --wallet-url http://127.0.0.1:5553 "$@"
+#$CLEOS -u https://127.0.0.1: --wallet-url http://127.0.0.1:5553 "$@"
