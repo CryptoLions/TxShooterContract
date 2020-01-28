@@ -34,7 +34,8 @@ void TxShooterContract::deftx( uint64_t delay, name payer, uint64_t index, std::
     transaction dtx;
     dtx.expiration =  time_point_sec( now + 60 * 60 );;
     dtx.delay_sec = delay;
-    dtx.actions.emplace_back( permission_level{get_self(), "active"_n},_self, "stress"_n, memo  );
+    //dtx.actions.emplace_back( permission_level{get_self(), "active"_n},_self, "stress"_n, memo  );
+    dtx.actions.emplace_back( permission_level{get_self(), "active"_n},"eosio.null"_n, "stress"_n, memo  );
     uint128_t sender_id = ( uint128_t(now) << 64 ) | now - index ;
     dtx.send( sender_id, payer );
 }
